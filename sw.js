@@ -1,8 +1,8 @@
 // ЦУП — сервис-воркер оболочки: хранит только саму оболочку (страницу и иконки),
 // чтобы приложение устанавливалось и без интернета показывало экран «Нет связи».
 // Данные приложения всегда берутся из Google напрямую — здесь ничего не кешируется.
-var CACHE = 'cup-shell-v1';
-var SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-64.png'];
+var CACHE = 'cup-shell-v2';
+var SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'maskable-512.png', 'apple-touch-icon.png', 'favicon-64.png'];
 
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); }));
